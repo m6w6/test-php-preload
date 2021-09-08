@@ -10,5 +10,3 @@ $op = getenv("require") ? fn($f) => require_once $f : "opcache_compile_file";
 $op("a.php");
 $op("b.php");
 $op("c.php");
-
-var_dump(get_included_files());

@@ -1,0 +1,74 @@
+# generated file; do not edit!
+
+name: test
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  php-74:
+    name: php-74
+    env:
+      PHP: "7.4"
+      enable_opcache: "yes"
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: Install
+        run: |
+          sudo apt-get install -y \
+            php-cli \
+            php-pear \
+            re2c
+      - name: Prepare
+        run: |
+          make -f scripts/ci/Makefile php
+      - name: Test
+        run: |
+          make -f scripts/ci/Makefile pecl-test TESTS=test.phpt
+  php-80:
+    name: php-80
+    env:
+      PHP: "8.0"
+      enable_opcache: "yes"
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: Install
+        run: |
+          sudo apt-get install -y \
+            php-cli \
+            php-pear \
+            re2c
+      - name: Prepare
+        run: |
+          make -f scripts/ci/Makefile php
+      - name: Test
+        run: |
+          make -f scripts/ci/Makefile pecl-test TESTS=test.phpt
+  php-81:
+    name: php-81
+    env:
+      PHP: "8.1"
+      enable_opcache: "yes"
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: Install
+        run: |
+          sudo apt-get install -y \
+            php-cli \
+            php-pear \
+            re2c
+      - name: Prepare
+        run: |
+          make -f scripts/ci/Makefile php
+      - name: Test
+        run: |
+          make -f scripts/ci/Makefile pecl-test TESTS=test.phpt

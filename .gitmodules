@@ -1,0 +1,3 @@
+[submodule "ci"]
+	path = ci
+	url = github.com:m6w6/pecl-ci
