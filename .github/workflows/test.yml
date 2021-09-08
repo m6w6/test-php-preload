@@ -24,10 +24,10 @@ jobs:
             re2c
       - name: Prepare
         run: |
-          make -f scripts/ci/Makefile php
+          make -f ci/Makefile php
       - name: Test
         run: |
-          make -f scripts/ci/Makefile pecl-test TESTS=test.phpt
+          make -f ci/Makefile pecl-test TESTS=test.phpt
   php-80:
     name: php-80
     env:
@@ -46,10 +46,10 @@ jobs:
             re2c
       - name: Prepare
         run: |
-          make -f scripts/ci/Makefile php
+          make -f ci/Makefile php
       - name: Test
         run: |
-          make -f scripts/ci/Makefile pecl-test TESTS=test.phpt
+          make -f ci/Makefile pecl-test TESTS=test.phpt
   php-81:
     name: php-81
     env:
@@ -68,7 +68,7 @@ jobs:
             re2c
       - name: Prepare
         run: |
-          make -f scripts/ci/Makefile php
+          make -f ci/Makefile php
       - name: Test
         run: |
-          make -f scripts/ci/Makefile pecl-test TESTS=test.phpt
+          make -f ci/Makefile pecl-test TESTS=test.phpt
